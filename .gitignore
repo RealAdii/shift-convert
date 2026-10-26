@@ -1,0 +1,7 @@
+.build/
+dist/
+.DS_Store
+video/node_modules/
+video/out/
+video/public/*.png
+video/public/*.wav

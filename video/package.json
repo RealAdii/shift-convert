@@ -1,0 +1,26 @@
+{
+  "name": "shift-demo",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "assets": "cd .. && swift build -c release && .build/release/Shift --demo-assets video/public",
+    "audio": "python3 audio.py",
+    "render": "node render.mjs",
+    "stills": "node render.mjs --stills"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.530",
+    "@remotion/renderer": "4.0.530",
+    "remotion": "4.0.530",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.6.3"
+  },
+  "overrides": {
+    "zod": "4.6.7"
+  },
+  "license": "MIT"
+}

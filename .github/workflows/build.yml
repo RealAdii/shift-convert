@@ -1,0 +1,17 @@
+name: Build and verify
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  macos:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build native app
+        run: zsh build.sh
+      - name: Verify real conversions and radial hit testing
+        run: .build/release/Shift --self-test
+      - name: Verify bundle
+        run: codesign --verify --deep --strict dist/Shift.app
